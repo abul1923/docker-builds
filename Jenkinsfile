@@ -6,7 +6,7 @@ node {
      
     stage('Build the Image and Push to Docker hub') {                
       app = docker.build('abulhassan/web-server')                
-      withDockerRegistry([credentialsId: 'docker']) {                
+      withDockerRegistry([credentialsId: 'docker_d']) {                
       app.push("${env.BUILD_NUMBER}")                
       app.push('latest')
      }        
